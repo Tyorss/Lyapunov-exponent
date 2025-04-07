@@ -6,7 +6,9 @@ from scipy.stats import linregress
 import nolds # 비선형 시계열 분석 라이브러리
 import os
 
-# 이미지 저장 폴더 생성
+# 'data' 폴더 생성
+os.makedirs('data', exist_ok=True)
+# 'images' 폴더 생성
 os.makedirs('images', exist_ok=True)
 
 # --- 1. 데이터 로드 및 전처리 ---
@@ -199,7 +201,7 @@ print("- `nolds` 외 다른 라이브러리(e.g., `nolitsa`)나 직접 구현을
 # 결과를 재현 가능하도록 데이터와 코드 저장
 
 # 사용 데이터 저장 (CSV)
-output_data_file = 'spy_data.csv'
+output_data_file = 'data/spy_data.csv'
 price.to_csv(output_data_file)
 print(f"\n사용한 원본 SPY 가격 데이터 저장 완료: {output_data_file}")
 
